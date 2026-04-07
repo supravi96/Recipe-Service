@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'Node 18'
+    }
+    
     stages {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://github.com/supravi96/Recipe-Service.git'
+                url: 'https://github.com/dhdhgb/Recipe-Service.git'
             }
         }
         stage('Install Dependencies') {
