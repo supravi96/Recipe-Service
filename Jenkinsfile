@@ -8,16 +8,32 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', 
-                url: 'https://github.com/supravi96/Recipe-Service.git'
+                checkout scm
             }
         }
-        stage('Install Dependencies') {
+        stage('Build VSIX') {
+            when {
+                changeset "vs/**"
+
+                steps {
+                    dir('vs') {
+                        echo "installing dependencies"
+                        bat 'npm install'
+                        echo 'installing vsce package globally'
+                        bat 'npm install -g vsce'
+                        echo 'running webpack'
+                        bat 'npm run webpack'
+                        echo 'packaging VSIX'
+                        bat 'vsce package'
+                    }
+                }
+            }
+        }
+
+        stage('Upload VSIX') {
             steps {
-                echo 'Installing dependencies'
-                bat 'node -v'
-                bat 'npm -v'
-                bat 'npm install'
+                echo 'Uploading VSIX'
+                archiveArtifacts artifacts: 'vs/*.vsix', fingerprint: true
             }
         }
     }
