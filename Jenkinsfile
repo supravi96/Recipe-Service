@@ -14,18 +14,18 @@ pipeline {
         stage('Build VSIX') {
             when {
                 changeset "vs/**"
+            }
 
-                steps {
-                    dir('vs') {
-                        echo "installing dependencies"
-                        bat 'npm install'
-                        echo 'installing vsce package globally'
-                        bat 'npm install -g vsce'
-                        echo 'running webpack'
-                        bat 'npm run webpack'
-                        echo 'packaging VSIX'
-                        bat 'vsce package'
-                    }
+            steps {
+                dir('vs') {
+                    echo "installing dependencies"
+                    bat 'npm install'
+                    echo 'installing vsce package globally'
+                    bat 'npm install -g vsce'
+                    echo 'running webpack'
+                    bat 'npm run webpack'
+                    echo 'packaging VSIX'
+                    bat 'vsce package'
                 }
             }
         }
