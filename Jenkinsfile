@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', 
-                url: 'https://github.com/dhdhgb/Recipe-Service.git'
+                url: 'https://github.com/supravi96/Recipe-Service.git'
             }
         }
         stage('Install Dependencies') {
