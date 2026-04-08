@@ -1,13 +1,22 @@
 {
-  "name": "recipe",
+  "name": "my-extension",
+  "displayName": "My Extension",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
-  "author": "Supravi Prabhudessai",
-  "type": "commonjs",
-  "main": "index.js",
+  "publisher": "Supravi Prabhudessai",
+  "engines": {
+		"vscode": "^1.90.0"
+	},  
+  "categories": [
+		"Other"
+	],
+  "contributes": {},
+  "activationEvents": [],
+  "main": "./dist/extension.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "echo 'webpack done'"
   },
   "dependencies": {
     "express": "^5.2.1"
