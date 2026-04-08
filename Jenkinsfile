@@ -22,8 +22,8 @@ pipeline {
                     bat 'npm install'
                     echo 'installing vsce package globally'
                     bat 'npm install -g vsce'
-                    echo 'running webpack'
-                    bat 'npm run webpack'
+                    echo 'compiling'
+                    bat 'npm run compile'
                     echo 'packaging VSIX'
                     bat 'vsce package'
                 }
