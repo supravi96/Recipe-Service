@@ -20,12 +20,12 @@ pipeline {
                 dir('vs') {
                     echo "installing dependencies"
                     bat 'npm install'
-                    echo 'installing vsce package globally'
-                    bat 'npm install -g vsce'
+
                     echo 'compiling'
                     bat 'npm run compile'
-                    echo 'packaging VSIX'
-                    bat 'vsce package'
+
+                    echo 'Packaging VSIX'
+                    bat 'npx @vscode/vsce package'
                 }
             }
         }
