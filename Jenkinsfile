@@ -13,7 +13,10 @@ pipeline {
         }
         stage('Build VSIX') {
             when {
-                changeset "vs/**"
+                anyOf {
+                    changeset "vs/**"
+                    changeset "Jenkinsfile"
+                }
             }
 
             steps {
