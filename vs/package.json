@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "A simple Hello World VS Code extension",
   "license": "ISC",
-  "publisher": "Supravi Prabhudessai",
+  "publisher": "my-organization",
   "repository": {
     "type": "git",
     "url": "https://github.com/SupraviPrabhudessai/my-extension.git"
