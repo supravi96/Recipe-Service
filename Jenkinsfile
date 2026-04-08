@@ -14,6 +14,7 @@ pipeline {
         stage('Build VSIX') {
             when {
                 anyOf {
+                    expression { return currentBuild.changeSets.empty }    
                     changeset "vs/**"
                     changeset "Jenkinsfile"
                     expression { return env.CHANGE_ID != null }
