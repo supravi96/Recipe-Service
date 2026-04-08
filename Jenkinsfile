@@ -16,6 +16,7 @@ pipeline {
                 anyOf {
                     changeset "vs/**"
                     changeset "Jenkinsfile"
+                    expression { return env.CHANGE_ID != null }
                 }
             }
 
