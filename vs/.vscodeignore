@@ -1,37 +1,3 @@
 # Node modules (bundled by webpack, no need to include)
 node_modules
 **/node_modules/**
-
-# Build output folders
-out
-dist
-.vscode-test
-
-# TypeScript source and maps (you only need compiled JS)
-**/*.ts
-**/*.tsx
-**/*.map
-
-# Tests
-tests
-**/*.spec.ts
-**/*.test.ts
-
-# Git and version control
-.git
-.gitignore
-.gitattributes
-
-# Documentation and metadata (optional)
-README.md
-LICENSE
-*.md
-*.markdown
-
-# VS Code settings and workspace files
-.vscode
-**/*.code-workspace
-
-# System files
-.DS_Store
-Thumbs.db
