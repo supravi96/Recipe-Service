@@ -14,6 +14,10 @@ pipeline {
         stage('Build VSIX') {
             when {
                 anyOf {
+                    expression { 
+                        def cs = currentBuild.changeSets
+                        return cs == null || cs.size() == 0
+                    }
                     changeset "vs/**"
                     changeset "Jenkinsfile"
                     expression { return env.CHANGE_ID != null }
